@@ -4,37 +4,13 @@ A complete implementation of vision-based SLAM for creating globally consistent 
 
 ## Visual Results
 
-### Photomosaic Comparison: Before and After Optimization
+![GTSAM Optimized Photomosaic](scripts/results/mosaic_after.png)
 
-<table>
-  <tr>
-    <td><b>Before GTSAM Optimization</b></td>
-    <td><b>After GTSAM Optimization</b></td>
-  </tr>
-  <tr>
-    <td><img src="scripts/results/mosaic_before.png" width="400"/></td>
-    <td><img src="scripts/results/mosaic_after.png" width="400"/></td>
-  </tr>
-  <tr>
-    <td>Sequential odometry only<br/>Visible drift accumulation</td>
-    <td>Globally consistent<br/>Loop closures applied</td>
-  </tr>
-</table>
+*28-frame underwater mosaic from Skerki Deep shipwreck (500m depth). Corrected with pose graph optimization.*
 
-*28-frame underwater mosaic from Skerki Deep shipwreck (500m depth). Left: 58px drift at mid-trajectory. Right: Corrected with pose graph optimization.*
+![Factor Graph](scripts/results/factor_graph_28_images_after_gtsam.png)
 
-### Factor Graph Evolution
-
-<table>
-  <tr>
-    <td><img src="scripts/results/factor_graph_28_images_before_gtsam.png" width="400"/></td>
-    <td><img src="scripts/results/factor_graph_28_images_after_gtsam.png" width="400"/></td>
-  </tr>
-  <tr>
-    <td><b>Initial Estimates</b><br/>Accumulated uncertainty</td>
-    <td><b>After Optimization</b><br/>34% uncertainty reduction</td>
-  </tr>
-</table>
+*After Optimization 34% uncertainty reduction*
 
 ## Motivation
 
@@ -165,11 +141,13 @@ UnderwaterPhotomosaicing_SLAM/
 
 ### Key Papers
 
-1. **SIFT**: Lowe, D. G. (2004). "Distinctive Image Features from Scale-Invariant Keypoints." *International Journal of Computer Vision*, 60(2), 91-110.
+1. O. Pizarro and H. Singh, "Toward large-area mosaicing for underwater scientific applications," in IEEE Journal of Oceanic Engineering, vol. 28, no. 4, pp. 651-672, Oct. 2003, doi: 10.1109/JOE.2003.819154. 
 
-2. **RANSAC**: Fischler, M. A., & Bolles, R. C. (1981). "Random Sample Consensus: A Paradigm for Model Fitting with Applications to Image Analysis and Automated Cartography." *Communications of the ACM*, 24(6), 381-395.
+2. Lowe, D. G. (2004). "Distinctive Image Features from Scale-Invariant Keypoints." *International Journal of Computer Vision*, 60(2), 91-110.
 
-3. **Pose Graph SLAM**: Grisetti, G., Kümmerle, R., Stachniss, C., & Burgard, W. (2010). "A Tutorial on Graph-Based SLAM." *IEEE Intelligent Transportation Systems Magazine*, 2(4), 31-43.
+3. Fischler, M. A., & Bolles, R. C. (1981). "Random Sample Consensus: A Paradigm for Model Fitting with Applications to Image Analysis and Automated Cartography." *Communications of the ACM*, 24(6), 381-395.
 
-4. **GTSAM**: Dellaert, F., & Kaess, M. (2017). "Factor Graphs for Robot Perception." *Foundations and Trends in Robotics*, 6(1-2), 1-139.
+4. Grisetti, G., Kümmerle, R., Stachniss, C., & Burgard, W. (2010). "A Tutorial on Graph-Based SLAM." *IEEE Intelligent Transportation Systems Magazine*, 2(4), 31-43.
+
+5. Dellaert, F., & Kaess, M. (2017). "Factor Graphs for Robot Perception." *Foundations and Trends in Robotics*, 6(1-2), 1-139.
 
